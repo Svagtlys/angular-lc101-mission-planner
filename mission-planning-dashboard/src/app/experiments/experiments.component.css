@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+
+h3 {
+    text-decoration: underline;
+    margin-bottom: 0px;
+}

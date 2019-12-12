@@ -1,4 +1,11 @@
 .box {
     display: flex;
     padding: 10px;
+    justify-content: center;
  }
+
+.item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
