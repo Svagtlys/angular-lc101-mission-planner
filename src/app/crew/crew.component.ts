@@ -20,7 +20,10 @@ export class CrewComponent implements OnInit {
   }
 
   addToCrew(memberName: string, isFirst: boolean): void {
-    if(memberName.length > 0){
+    let usedNames: string[] = this.crew.map(function(a) {
+      return a['name'];
+    });
+    if(! usedNames.includes(memberName) && memberName.length > 0){
       this.crew.push({name: memberName, firstMission: isFirst});
     }
   }
@@ -35,8 +38,13 @@ export class CrewComponent implements OnInit {
   }
 
   saveMember(updatedName: string, member: object): void {
-    member['name'] = updatedName;
-    this.memberBeingEdited = null;
+    let usedNames: string[] = this.crew.map(function(a) {
+      return a['name'];
+    });
+    if(! usedNames.includes(updatedName)){
+      member['name'] = updatedName;
+      this.memberBeingEdited = null;
+    }
   }
 
 }
